@@ -24,7 +24,10 @@ def run_cmd(cmd):
     return subprocess.check_output(cmd, shell=True).decode('utf-8')
 
 def get_my_ip():
-    return run_cmd(GET_IP_CMD)[:-1]
+    val = run_cmd(GET_IP_CMD)[:-1]
+    if val == "":
+        val = "No Connection!"
+    return val
 
 def get_my_load():
     return run_cmd(GET_LOADAVG_CMD)[:-1]
