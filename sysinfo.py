@@ -98,18 +98,14 @@ def start_sysinfo():
 def display_on_off(event):
     global display_on
 
-    if display_on:
+    if display_on and allow_write:
         display_on = False
-        cad.lcd.clear()
         cad.lcd.display_off()
         cad.lcd.backlight_off()
-    else:
+    elif not display_on and allow_write:
         cad.lcd.display_on()
         cad.lcd.backlight_on()
         display_on = True
-
-        write_load()
-        write_temp_mem()
 
 if __name__ == "__main__":
     cad = pifacecad.PiFaceCAD()
