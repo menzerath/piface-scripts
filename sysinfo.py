@@ -4,7 +4,7 @@ import subprocess
 from time import sleep
 import pifacecad
 
-UPDATE_INTERVAL = 3
+UPDATE_INTERVAL = 5
 GET_IP_CMD = "hostname --all-ip-addresses"
 GET_LOADAVG_CMD = "cat /proc/loadavg"
 GET_TEMP_CMD = "/opt/vc/bin/vcgencmd measure_temp"
@@ -67,15 +67,22 @@ def write_ip(event):
         write_load()
 
 def write_temp_mem():
-    cad.lcd.set_cursor(0, 1)
+    global allow_write
 
-    cad.lcd.write_custom_bitmap(2)
-    cad.lcd.write(":{}".format(get_my_temp()))
-    cad.lcd.write_custom_bitmap(3)
-    cad.lcd.write("C ")
+    if allow_write:
+        allow_write = False
 
-    cad.lcd.write_custom_bitmap(4)
-    cad.lcd.write(":{}".format(get_my_free_mem()))
+        cad.lcd.set_cursor(0, 1)
+
+        cad.lcd.write_custom_bitmap(2)
+        cad.lcd.write(":{}".format(get_my_temp()))
+        cad.lcd.write_custom_bitmap(3)
+        cad.lcd.write("C ")
+
+        cad.lcd.write_custom_bitmap(4)
+        cad.lcd.write(":{}".format(get_my_free_mem()))
+
+        allow_write = True
 
 def start_sysinfo():
     while True:
