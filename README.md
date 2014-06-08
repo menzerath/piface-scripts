@@ -2,7 +2,9 @@
 Here are some Python-Scripts for the [**PiFace Control and Display**](http://www.piface.org.uk/products/piface_control_and_display/) (a Raspberry Pi add-on) you may want to use.
 
 ## Scripts
-* `IMWD.py`: Displays [Is My Website Down](https://github.com/MarvinMenzerath/IsMyWebsiteDown)-Status-Information on the Display. You need to have a local copy of "IMWD.jar" (v2.1.2+) in the scripts' folder and Java 7 installed (`sudo apt-get update && sudo apt-get install oracle-java7-jdk`).  Edit URL and Interval in the first lines of the script ([here](https://github.com/MarvinMenzerath/PiFace/blob/master/imwd.py#L7) and [here](https://github.com/MarvinMenzerath/PiFace/blob/master/imwd.py#L8))
+* `IMWD.py`: Displays [Is My Website Down](https://github.com/MarvinMenzerath/IsMyWebsiteDown)-Status-Information on the Display.  
+You need to have a local copy of "IMWD.jar" (v2.1.2+) in the scripts' folder and Java 7 installed (`sudo apt-get update && sudo apt-get install oracle-java7-jdk`).  
+Edit URL and Interval in the first lines of the script ([here](https://github.com/MarvinMenzerath/PiFace/blob/master/imwd.py#L7) and [here](https://github.com/MarvinMenzerath/PiFace/blob/master/imwd.py#L8)).
 * `SysInfo.py`: Bases on the example-script but contains a few extra features like Display On/Off and the Load Average.
 * `Radio.py`: Bases on the example-script but has a few German Radio-Stations included instead of the UK ones.
 * `Hangman.py`: Bases on the example-script but has a few Germany Words instead of the default English words.
@@ -22,7 +24,7 @@ git clone https://github.com/MarvinMenzerath/PiFace.git
 ## Start
 ```bash
 cd PiFace/
-sudo python3 sysinfo.py
+sudo python3 script.py
 ```
 
 ## License
