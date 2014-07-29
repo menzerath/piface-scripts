@@ -6,7 +6,7 @@ import pifacecad
 
 UPDATE_INTERVAL = 30
 URL = "http://menzerath.eu"
-GET_STATUS_CMD = "java -jar IMWD.jar " + URL + " --once"
+GET_STATUS_CMD = "java -jar IMWD.jar " + URL + " 0 --once"
 
 ok_icon = pifacecad.LCDBitmap([0,1,3,22,28,8,0,0])
 bad_icon = pifacecad.LCDBitmap([0,27,14,4,14,27,0,0])
