@@ -1,4 +1,4 @@
-#PiFace Control and Display Scripts
+# PiFace Control and Display Scripts
 Here are some Python-Scripts for the [**PiFace Control and Display**](http://www.piface.org.uk/products/piface_control_and_display/) (a Raspberry Pi add-on) you may want to use.
 
 ## Scripts
